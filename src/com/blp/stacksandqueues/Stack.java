@@ -46,4 +46,17 @@ public class Stack {
             return -1;
         }
     }
+
+    // Utility function to pop a top element from the stack
+    public void pop() {  // remove at the beginning
+        // check for stack underflow
+        if (top == null) {
+            System.out.print("\nStack Underflow");
+            return;
+        }
+        System.out.println("Removing " + peek());
+
+        // update the top pointer to point to the next node
+        top = (top).next;
+    }
 }
