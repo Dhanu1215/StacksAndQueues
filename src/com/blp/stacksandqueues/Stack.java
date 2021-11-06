@@ -18,7 +18,6 @@ public class Stack {
             System.out.print("Heap Overflow");
             return;
         }
-
         System.out.println("Inserting " + x);
 
         // set data in the allocated node
