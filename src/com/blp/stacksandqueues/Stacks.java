@@ -1,7 +1,7 @@
 package com.blp.stacksandqueues;
 
 
-public class StacksAndQueues {
+public class Stacks {
 
     public static void main(String[] args) {
         Stack stack = new Stack();
