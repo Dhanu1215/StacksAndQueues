@@ -17,6 +17,11 @@ public class LinkedListQueues {
         System.out.println("Displaying Queue data");
         queues.displayList();
         System.out.println("Top element peeked is = " + queues.peek());
+        System.out.println("Removing Queue elements");
+        System.out.println("Item removed = " + queues.remove());
+        System.out.println("Item removed = " + queues.remove());
+        System.out.println("Item removed = " + queues.remove());
+        queues.displayList();
     }
 
     private void insertLast(int data) {
@@ -29,6 +34,17 @@ public class LinkedListQueues {
         }
         rear = newNode;
     }
+    public int removeFirst(){
+
+        int temp = front.data;
+        // If no node left after deleting node
+        if(front.next == null){
+            rear = null;
+        }
+        // front starts pointing to next element
+        front = front.next;
+        return temp;
+    }
 
     private boolean isEmpty() {
         return front == null;
@@ -39,6 +55,9 @@ public class LinkedListQueues {
         // Start from first node
         Node1 current = front;
         // loop till last node
+        if (current == null){
+            System.out.println("Queue is empty");
+        }else
         while (current != null) {
             current.displayData();
             current = current.next;
@@ -55,8 +74,16 @@ public class LinkedListQueues {
 
     public int peek() {
         if (isEmpty()) {
-            throw new RuntimeException("Queue is empty..");
+            System.out.println("Queue is empty..");
         }
         return nodeData();
     }
+
+    private int remove() {
+        if(isEmpty()){
+            System.out.println("Queue is empty..");
+        }
+        return removeFirst();
+    }
+
 }
